@@ -1,0 +1,893 @@
+
+/* =========================================
+   Assignment 4 - Forms and Validation
+   Custom CSS for Bootstrap 5
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+
+/* ---------- Theme colors ---------- */
+
+:root {
+  --primary-green: #0F6B5F;
+  --accent-yellow: #F2A93B;
+  --dark-green: #16302B;
+  --light-background: #F4F7F5;
+  --light-green: #E6EFEC;
+  --border-green: #D9E8E3;
+}
+
+
+/* ---------- General styles ---------- */
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: var(--dark-green);
+  background-color: #f7f9f8;
+}
+
+.page-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--dark-green);
+  margin-bottom: 12px;
+}
+
+.page-subtitle {
+  color: #61766e;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.content-page {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+
+/* ---------- Shared form panels ---------- */
+
+.form-panel {
+  background-color: white;
+  border: 1px solid var(--border-green);
+  border-radius: 22px;
+  padding: clamp(20px, 4vw, 40px);
+  box-shadow: 0 12px 30px rgba(22, 48, 43, 0.08);
+}
+
+.form-panel .form-label,
+.form-panel legend {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.form-panel .form-control,
+.form-panel .form-select {
+  border: 1px solid #c8dad4;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.form-panel .form-control:focus,
+.form-panel .form-select:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 0.2rem rgba(15, 107, 95, 0.12);
+}
+
+.section-heading {
+  color: var(--primary-green);
+  font-size: 1rem;
+  font-weight: 800;
+  border-bottom: 1px solid var(--border-green);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.form-panel .form-check-input:checked {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.form-panel .form-text {
+  color: #61766e;
+  font-size: 0.8rem;
+}
+
+
+/* ---------- General buttons ---------- */
+
+.primary-action {
+  background-color: var(--primary-green);
+  border: 1px solid var(--primary-green);
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  padding: 12px 22px;
+}
+
+.primary-action:hover {
+  background-color: #095448;
+  border-color: #095448;
+  color: white;
+}
+
+
+/* =========================================
+   TASK 1 - TRAIN TICKET
+   ========================================= */
+
+.ticket-page {
+  background-color: var(--light-green);
+  min-height: 100vh;
+  padding: clamp(14px, 4vw, 48px) 0;
+}
+
+.ticket-shell {
+  background-color: white;
+  border: 1px solid var(--border-green);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 34px rgba(22, 48, 43, 0.15);
+}
+
+
+/* Header */
+
+.ticket-header {
+  background-color: var(--primary-green);
+  color: white;
+  padding: 22px 28px;
+}
+
+.ticket-header h1 {
+  margin: 0;
+  font-size: clamp(1rem, 1.7vw, 1.35rem);
+  font-weight: 800;
+}
+
+
+/* Body */
+
+.ticket-body {
+  padding: clamp(18px, 3vw, 38px);
+}
+
+
+/* One way / Round trip */
+
+.trip-switch {
+  display: inline-flex;
+  margin-bottom: 24px;
+}
+
+.trip-switch .btn {
+  background-color: white;
+  color: var(--primary-green);
+  border: 1px solid var(--primary-green);
+  padding: 9px 24px;
+  font-size: 0.81rem;
+  font-weight: 700;
+}
+
+.trip-switch .btn:first-of-type {
+  border-radius: 30px 0 0 30px;
+}
+
+.trip-switch .btn:last-of-type {
+  border-radius: 0 30px 30px 0;
+  margin-left: -1px;
+}
+
+.trip-switch .btn-check:checked + .btn {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+  color: white;
+}
+
+.trip-switch .btn-check:focus-visible + .btn {
+  box-shadow: 0 0 0 4px rgba(242, 169, 59, 0.5);
+}
+
+.trip-switch .btn:hover {
+  background-color: var(--light-green);
+}
+
+.trip-switch .btn-check:checked + .btn:hover {
+  background-color: var(--primary-green);
+  color: white;
+}
+
+
+/* From / To boxes */
+
+.city-box {
+  background-color: var(--light-background);
+  border: 1px solid var(--border-green);
+  border-radius: 12px;
+  padding: 7px 13px;
+}
+
+.city-box label {
+  display: block;
+  font-size: 0.72rem;
+  color: #748782;
+  margin-bottom: 2px;
+}
+
+.city-box input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: var(--dark-green);
+  font-size: 0.91rem;
+  font-weight: 600;
+}
+
+.city-box input::placeholder {
+  color: #698078;
+  opacity: 1;
+}
+
+.city-box:focus-within {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 1px;
+}
+
+.city-box input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+/* Ticket labels */
+
+.ticket-form .form-label,
+.ticket-form legend {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-bottom: 7px;
+}
+
+
+/* Inputs */
+
+.ticket-form .form-control:not(.city-control),
+.ticket-form .form-select {
+  background-color: var(--light-background);
+  border: 1px solid var(--border-green);
+  border-radius: 11px;
+  color: var(--dark-green);
+  font-size: 0.87rem;
+  padding: 11px 13px;
+}
+
+.ticket-form .form-control:focus,
+.ticket-form .form-select:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 0.18rem rgba(15, 107, 95, 0.12);
+}
+
+.ticket-form .form-check-input:checked {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.ticket-form .form-check-label {
+  font-size: 0.83rem;
+}
+
+.ticket-form fieldset {
+  min-width: 0;
+}
+
+
+/* Carriage radio buttons */
+
+.class-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+
+/* Phone input group */
+
+.phone-prefix {
+  background-color: var(--primary-green);
+  color: white;
+  border: 1px solid var(--primary-green);
+  border-radius: 11px 0 0 11px;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
+.ticket-form .phone-input {
+  border-radius: 0 11px 11px 0 !important;
+}
+
+
+/* SMS switch */
+
+.ticket-form .form-switch {
+  padding-left: 2.65em;
+}
+
+
+/* Ticket action buttons */
+
+.ticket-actions {
+  margin-top: 24px;
+}
+
+.ticket-actions .btn {
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-weight: 800;
+  padding: 11px 25px;
+}
+
+.btn-outline-train {
+  background-color: white;
+  color: var(--dark-green);
+  border: 1.5px solid #829c93;
+}
+
+.btn-outline-train:hover {
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.btn-find {
+  background-color: var(--accent-yellow);
+  border: 1px solid var(--accent-yellow);
+  color: var(--dark-green);
+}
+
+.btn-find:hover {
+  background-color: #e39b30;
+  border-color: #e39b30;
+  color: var(--dark-green);
+}
+
+
+/* =========================================
+   TASK 2 - HTML VALIDATION
+   ========================================= */
+
+
+
+.validation-form input:user-invalid,
+.validation-form select:user-invalid,
+.validation-form textarea:user-invalid {
+  border-color: #cf3a40;
+}
+
+.validation-form input:user-invalid:focus,
+.validation-form select:user-invalid:focus,
+.validation-form textarea:user-invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(207, 58, 64, 0.16);
+}
+
+
+/* Text, number, email, date, time, URL and textarea */
+
+.validation-form .form-control:user-invalid ~ .invalid-feedback,
+.validation-form .form-select:user-invalid ~ .invalid-feedback {
+  display: block;
+}
+
+
+/* Required agreement checkbox */
+
+.validation-form .form-check-input:user-invalid ~ .invalid-feedback {
+  display: block;
+}
+
+.validation-form .form-check-input:user-invalid {
+  border-color: #cf3a40;
+}
+
+
+/* Required radio group */
+
+.validation-form .choice-set:has(.form-check-input:user-invalid)
+> .invalid-feedback {
+  display: block;
+}
+
+.validation-form .invalid-feedback {
+  font-size: 0.79rem;
+}
+
+
+/* Radio group container */
+
+.validation-form .choice-set {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.validation-form textarea {
+  min-height: 132px;
+}
+
+
+/* =========================================
+   TASK 3 - RESERVATION FORM
+   ========================================= */
+
+.reservation-form .form-check {
+  margin-bottom: 7px;
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #cf831a;
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 575.98px) {
+
+  .ticket-page {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .ticket-shell {
+    border-radius: 13px;
+  }
+
+  .ticket-header {
+    padding: 17px;
+  }
+
+  .ticket-header h1 {
+    font-size: 1rem;
+  }
+
+  .ticket-body {
+    padding: 16px;
+  }
+
+  .trip-switch {
+    display: flex;
+    margin-bottom: 18px;
+  }
+
+  .trip-switch .btn {
+    flex: 1;
+    padding: 10px 6px;
+    font-size: 0.73rem;
+  }
+
+  .class-options {
+    gap: 9px;
+  }
+
+  .ticket-form .form-check-label {
+    font-size: 0.75rem;
+  }
+
+  .ticket-actions .btn {
+    width: 100%;
+  }
+
+  .form-panel {
+    border-radius: 16px;
+  }
+
+}
+
+
+/* ==========================================
+   TASK 1 - TRAIN TICKET DESIGN
+   ========================================== */
+
+:root {
+  --train-green: #0F6B5F;
+  --train-yellow: #F2A93B;
+  --train-dark: #16302B;
+  --train-field: #F4F7F5;
+  --train-background: #E6EFEC;
+}
+
+/* Page background */
+
+.ticket-page {
+  min-height: 100vh;
+  background-color: var(--train-background);
+  color: var(--train-dark);
+  font-family: "Montserrat", Arial, sans-serif;
+  padding: 35px 0;
+}
+
+/* White booking card */
+
+.ticket-shell {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(22, 48, 43, 0.15);
+}
+
+/* Green header */
+
+.ticket-header {
+  background-color: var(--train-green);
+  color: #ffffff;
+  padding: 26px 50px;
+}
+
+.ticket-header h1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* White form content */
+
+.ticket-body {
+  background-color: #ffffff;
+  padding: 52px 62px 56px;
+}
+
+/* One way / Round trip buttons */
+
+.trip-switch {
+  display: inline-flex;
+  margin-bottom: 28px;
+}
+
+.trip-switch .btn {
+  background-color: #ffffff;
+  color: var(--train-green);
+  border: 1px solid var(--train-green);
+  border-radius: 0;
+  padding: 10px 24px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.trip-switch .btn:first-of-type {
+  border-radius: 30px 0 0 30px;
+}
+
+.trip-switch .btn:last-of-type {
+  border-radius: 0 30px 30px 0;
+  margin-left: -1px;
+}
+
+.trip-switch .btn-check:checked + .btn {
+  background-color: var(--train-green);
+  border-color: var(--train-green);
+  color: #ffffff;
+}
+
+.trip-switch .btn-check:focus-visible + .btn {
+  outline: 3px solid var(--train-yellow);
+  outline-offset: 3px;
+}
+
+/* From and To input boxes */
+
+.city-box {
+  background-color: var(--train-field);
+  border: 1px solid #d8e5e0;
+  border-radius: 11px;
+  padding: 8px 14px;
+}
+
+.city-box label {
+  display: block;
+  color: #7b8b86;
+  font-size: 0.72rem;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.ticket-form .city-box .city-control {
+  background: transparent;
+  color: var(--train-dark);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.city-box input::placeholder {
+  color: #52645e;
+  opacity: 1;
+}
+
+.city-box:focus-within {
+  outline: 2px solid var(--train-green);
+  outline-offset: 1px;
+}
+
+/* Form labels */
+
+.ticket-form .form-label,
+.ticket-form legend {
+  display: block;
+  color: var(--train-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* Date, email, phone and select fields */
+
+.ticket-form .form-control:not(.city-control),
+.ticket-form .form-select {
+  background-color: var(--train-field);
+  color: var(--train-dark);
+  border: 1px solid #d8e5e0;
+  border-radius: 10px;
+  padding: 12px 13px;
+  font-size: 0.85rem;
+}
+
+.ticket-form .form-control:focus,
+.ticket-form .form-select:focus {
+  border-color: var(--train-green);
+  box-shadow: 0 0 0 3px rgba(15, 107, 95, 0.12);
+}
+
+/* Spacing between form columns */
+
+.ticket-form .row.g-3 {
+  --bs-gutter-x: 1.25rem;
+  --bs-gutter-y: 1.15rem;
+}
+
+/* Carriage class radio buttons */
+
+.class-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.class-options .form-check {
+  margin-bottom: 0;
+}
+
+.ticket-form .form-check-input {
+  border-color: #a9bdb5;
+  cursor: pointer;
+}
+
+.ticket-form .form-check-input:checked {
+  background-color: var(--train-green);
+  border-color: var(--train-green);
+}
+
+.ticket-form .form-check-input:focus-visible {
+  outline: 3px solid var(--train-yellow);
+  outline-offset: 2px;
+}
+
+.ticket-form .form-check-label {
+  color: #53645e;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+/* Phone input group */
+
+.ticket-form .phone-prefix {
+  background-color: var(--train-green);
+  color: #ffffff;
+  border: 1px solid var(--train-green);
+  border-radius: 10px 0 0 10px;
+  font-size: 0.83rem;
+  font-weight: 700;
+  padding: 0 14px;
+}
+
+.ticket-form .phone-input {
+  border-radius: 0 10px 10px 0 !important;
+}
+
+/* SMS switch */
+
+.ticket-form .form-switch {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-left: 2.6em;
+}
+
+.ticket-form .form-switch .form-check-input:checked {
+  background-color: var(--train-green);
+}
+
+/* Bottom action buttons */
+
+.ticket-actions {
+  margin-top: 26px;
+}
+
+.ticket-actions .btn {
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 12px 30px;
+}
+
+/* Clear button */
+
+.ticket-actions .btn-outline-train {
+  background-color: #ffffff;
+  color: var(--train-dark);
+  border: 1px solid #6d8981;
+}
+
+.ticket-actions .btn-outline-train:hover {
+  background-color: var(--train-field);
+  border-color: var(--train-green);
+  color: var(--train-green);
+}
+
+/* Find trains button */
+
+.ticket-actions .btn-find {
+  background-color: var(--train-yellow);
+  color: var(--train-dark);
+  border: 1px solid var(--train-yellow);
+}
+
+.ticket-actions .btn-find:hover {
+  background-color: #e69c2e;
+  border-color: #e69c2e;
+  color: var(--train-dark);
+}
+
+/* ==========================================
+   MOBILE DESIGN - 375px
+   ========================================== */
+
+@media (max-width: 575.98px) {
+
+  .ticket-page {
+    padding: 14px 0;
+  }
+
+  .ticket-shell {
+    border-radius: 15px;
+  }
+
+  .ticket-header {
+    padding: 20px;
+  }
+
+  .ticket-header h1 {
+    font-size: 1.03rem;
+  }
+
+  .ticket-body {
+    padding: 20px;
+  }
+
+  /* Journey buttons fill available space */
+
+  .trip-switch {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .trip-switch .btn {
+    flex: 1;
+    font-size: 0.76rem;
+    padding: 10px 8px;
+  }
+
+  /* Compact mobile spacing */
+
+  .ticket-form .row.g-3 {
+    --bs-gutter-y: 0.9rem;
+  }
+
+  .ticket-form .form-label,
+  .ticket-form legend {
+    font-size: 0.78rem;
+    margin-bottom: 6px;
+  }
+
+  .ticket-form .form-control:not(.city-control),
+  .ticket-form .form-select {
+    padding: 10px 11px;
+    font-size: 0.82rem;
+  }
+
+  .city-box {
+    padding: 7px 11px;
+  }
+
+  /* Radio buttons on one row */
+
+  .class-options {
+    gap: 12px;
+  }
+
+  .class-options .form-check-label {
+    font-size: 0.74rem;
+  }
+
+  /* Find trains above Clear */
+
+  .ticket-actions {
+    margin-top: 22px;
+  }
+
+  .ticket-actions .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.81rem;
+  }
+
+}
+
+
+/* Home page spacing */
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+/* Mobile spacing */
+
+@media (max-width: 575.98px) {
+  .home-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Task 1 - Left and right spacing */
+
+.ticket-page .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-sizing: border-box;
+}
+
+/* Mobile spacing */
+
+@media (max-width: 575.98px) {
+  .ticket-page .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

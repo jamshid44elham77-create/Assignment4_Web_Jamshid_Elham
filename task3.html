@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3 - Café Reservation</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <main class="container content-page">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+
+        <h1 class="page-title">Reserve a Table</h1>
+        <p class="page-subtitle">
+          Complete the form to request a table reservation.
+        </p>
+
+        <div class="form-panel">
+
+          <form class="reservation-form"
+                action="task3.html"
+                method="post">
+
+            <h2 class="section-heading">Contact Information</h2>
+
+            <div class="row g-3 mb-4">
+
+              <!-- Name -->
+              <div class="col-12 col-md-6">
+                <label for="guest-name" class="form-label">
+                  Your name *
+                </label>
+
+                <input type="text"
+                       id="guest-name"
+                       name="guestName"
+                       class="form-control"
+                       autocomplete="name"
+                       placeholder="Enter your name"
+                       required>
+              </div>
+
+              <!-- Email -->
+              <div class="col-12 col-md-6">
+                <label for="guest-email" class="form-label">
+                  Email *
+                </label>
+
+                <input type="email"
+                       id="guest-email"
+                       name="guestEmail"
+                       class="form-control"
+                       autocomplete="email"
+                       placeholder="you@example.com"
+                       required>
+              </div>
+
+              <!-- Phone -->
+              <div class="col-12 col-md-6">
+                <label for="guest-phone" class="form-label">
+                  Phone *
+                </label>
+
+                <input type="tel"
+                       id="guest-phone"
+                       name="guestPhone"
+                       class="form-control"
+                       autocomplete="tel"
+                       placeholder="+7 701 234 5678"
+                       required>
+              </div>
+
+              <!-- Guests -->
+              <div class="col-12 col-md-6">
+                <label for="guests" class="form-label">
+                  Guests *
+                </label>
+
+                <input type="number"
+                       id="guests"
+                       name="guests"
+                       class="form-control"
+                       min="1"
+                       step="1"
+                       placeholder="2"
+                       required>
+              </div>
+
+            </div>
+
+            <h2 class="section-heading">Reservation Details</h2>
+
+            <div class="row g-3 mb-3">
+
+              <!-- Date -->
+              <div class="col-12 col-md-6">
+                <label for="reservation-date" class="form-label">
+                  Date *
+                </label>
+
+                <input type="date"
+                       id="reservation-date"
+                       name="reservationDate"
+                       class="form-control"
+                       required>
+              </div>
+
+              <!-- Meal -->
+              <div class="col-12 col-md-6">
+                <label for="meal" class="form-label">
+                  Meal *
+                </label>
+
+                <select id="meal"
+                        name="meal"
+                        class="form-select"
+                        required>
+
+                  <option value="" selected>Choose a meal...</option>
+                  <option value="lunch">Lunch</option>
+                  <option value="dinner">Dinner</option>
+                </select>
+              </div>
+
+            </div>
+
+            <!-- Seating -->
+            <fieldset class="border-0 p-0 mb-3">
+              <legend class="form-label mb-2">
+                Seating *
+              </legend>
+
+              <div class="d-flex flex-wrap gap-4">
+
+                <div class="form-check">
+                  <input type="radio"
+                         id="inside"
+                         name="seating"
+                         value="inside"
+                         class="form-check-input"
+                         required>
+
+                  <label for="inside" class="form-check-label">
+                    Inside
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input type="radio"
+                         id="terrace"
+                         name="seating"
+                         value="terrace"
+                         class="form-check-input">
+
+                  <label for="terrace" class="form-check-label">
+                    Terrace
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+            <!-- Comments -->
+            <div class="mb-4">
+              <label for="comments" class="form-label">
+                Comments (optional)
+              </label>
+
+              <textarea id="comments"
+                        name="comments"
+                        class="form-control"
+                        rows="4"
+                        placeholder="Any special requests?"></textarea>
+            </div>
+
+            <!-- Agreement -->
+            <div class="form-check mb-4">
+              <input type="checkbox"
+                     id="terms"
+                     name="agreeToTerms"
+                     value="yes"
+                     class="form-check-input"
+                     required>
+
+              <label for="terms" class="form-check-label">
+                I agree to the reservation terms *
+              </label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn primary-action">
+              Reserve
+            </button>
+
+            <p class="form-text mt-3">
+              This demo validates the form.
+              A real reservation requires a server.
+            </p>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
